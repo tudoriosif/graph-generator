@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+
+html {
+    min-height: 100%;
+    width: 100%;
+}
+
+body {
+    min-height: 100%;
+    width: 100%;
+    background: rgb(15,32,39);
+    background: linear-gradient(45deg, rgba(15,32,39,1) 0%, rgba(32,58,67,1) 50%, rgba(44,83,100,1) 100%);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* -------- Logo */
+.logo-container{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    margin: 5vh 0;
+}
+
+.logo-container h1 {
+    font-family: 'Courgette', sans-serif;
+    font-size: clamp(48px, 3.75rem, 7vw);
+    color: #FFFFFF;
+    text-shadow: 2px 3px 5px #000;
+}
+/* ------- Form */
+
+.form-container{
+    position: relative;
+}
+
+.form{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#nodes, #connections {
+    width: max(350px,30%);
+    margin-bottom: 20px;
+    font-size: clamp(14px, 1.25rem, 2vw);
+    background-color: rgba(139, 139, 139, 0.15);
+    border: 0.5px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.25);
+    padding: 17.5px 15px;
+    border-radius: 25px;
+    font-family: 'Roboto', sans-serif;
+    color: rgba(255,255,255, 1);
+}
+
+
+
+.problem-section{
+    position: absolute;
+    top: 50%;
+    left: calc(50% + max(350px, 30%)/2 + 30px);
+    transform: translateY(-50%); 
+    width: max-content;
+    height: max-content; 
+    background: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    color: #FFF;
+    opacity: 0;
+    transition: opacity 2s ease-in;
+}
+.problem-section img{
+    width: 24px;
+    height: auto;
+}
+.problem-section p{
+    font-size: clamp(12px, 1rem, 1.2vw);
+    font-family: 'Roboto', sans-serif;
+}
+
+/* --------- Start Footer */
+.start-footer{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.start-button {
+    font-family:'Roboto', sans-serif;
+    font-size: clamp(18px, 1.25rem, 1.8rem);
+    color: #FFFFFF;
+    background: none;
+    border: 1px solid #FFF;
+    border-radius: 25px;
+    padding: 3px 20px;
+    margin-right: 2.5vw;
+    cursor: pointer;
+    transform: scale(1);
+    transition: transform 0.5s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+.start-button:hover {
+    transform: scale(1.2);
+    transition: transform 0.5s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+.correct{
+    background: #2ecc71;
+    transition: background 1s ease-in-out;
+}
+
+.wrong{
+    background-color: #e74c3c;
+    transition: background 1s ease-in-out;
+}
+
+.refresh button{
+    width: auto;
+    height: auto;
+    margin-left: 2.5vw;
+    background:none;
+    border: none;
+}
+
+.refresh button img{
+    cursor: pointer;
+    width: max(24px, 1.5vw);
+    height: auto;
+    transform: rotateZ(-270deg);
+    transition: transform 2s ease-out;
+}
+
+.refresh button img:hover{
+    transform: rotateZ(270deg);
+    transition: transform 2s ease-in;
+}
+
+/* ----------- Side Links */
+.links{
+    position: absolute;
+    right: 5vw;
+    top: 5vh;
+    width: max(28px, 2%);
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align:center; 
+}
+.links a img {
+    width: max(28px, 2vw);
+    height: auto;
+    margin-bottom: 30px;
+    transform: rotateZ(0deg);
+    transition: transform 0.3s ease-in;
+}
+
+.links a img:hover{
+    transform: rotateZ(-30deg);
+}
+
+#linkedin {
+    margin-bottom: 0px;
+}
+
+#facebook{
+    width: auto;
+    height: max(28px, 2vw);
+}
+
+/* ----------- Node container */
+.details-container{
+    width: 100%;
+    height: auto;
+    display: none;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 5vh;
+    opacity: 0;
+    transition: opacity .4s linear;
+}
+
+
+.details-container section{
+    width: 450px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+}
+
+
+.nodetext{
+    font-family: 'Courgette', sans-serif;
+    font-size: clamp(36px, 2.75rem, 2.5vw);
+    color: #FFF;
+    text-shadow: 1px 1px 2px #000;
+    padding: 0 0 15px 0;
+}
+
+.details-container section span {
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(24px, 2.25rem, 2.5vw);
+    color: #FFF;
+    text-shadow: 1px 1px 2px #000;
+    padding: 15px 0px;
+}
+
+/* -------- BFS and DFS */
+.parse-container{
+    width: 100%;
+    height: auto;
+    display: none;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    opacity: 0;
+    transition: opacity .4s linear;
+}
+
+.parse-container section {
+    text-align: center;
+    width: 450px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.bfstext, .dfstext{
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(36px, 2.75rem, 2.5vw);
+    color: #FFF;
+    text-shadow: 1px 1px 2px #000;
+    padding: 0 0 15px 0;
+}
+
+.parse-container section span {
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(24px, 2.25rem, 2.5vw);
+    color: #FFF;
+    text-shadow: 1px 1px 2px #000;
+    margin: 15px 0px;
+}
+
+/* Svg */
+.svg-container{
+    width: 100%;
+    height: 100vh;
+    margin-top: 50px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+svg{
+    width: 100%;
+    height: 100%;
+}
+
+
+/*  --------- Responsive */
+@media (max-width: 1000px) {
+    .details-container, .parse-container{
+        flex-direction: row;
+    }
+    .node-container, .con-container, .bfs-container, .dfs-container {
+        width: 100%;
+    }
+}
+
+@media (max-width: 540px) {
+    .links{
+        top: 1.5vh;
+        width: auto;
+        height: max(28px, 2%);
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .links a img {
+        margin-right: 30px;
+    }
+    #linkedin{
+        margin-right: 0;
+    }
+}
+@media (max-width: 740px){
+    .problem-section{
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 15vh;
+    }
+}

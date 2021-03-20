@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graph Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/webicon.svg">
+</head>
+<body>
+    <header class="logo-container">
+        <h1>Graph Generator</h1>
+    </header>
+    <main class="form-container">
+       <form action="" class="form">
+            <input type="text" name="nodeName" id="nodes" placeholder="Add nodes names (eg: [A, B, C, D])">
+            <input type="text" name="connections" id="connections" placeholder="Add nodes connections (eg: [A -> B, B -> C, C -> D])">
+        </form>
+        <div class="problem-section">
+            <img src="assets/alert.svg" alt="alert node conn match">
+            <p>
+                Your nodes<br> and <br> connections<br> must match!
+            </p>
+        </div>
+    </main>
+    <footer class="start-footer">
+        <button type="submit" onClick="startGraph()" class="start-button"
+        id="start-button">START</button>
+        <div class="refresh">
+            <button type="submit" onClick ="refreshValue()" id="refresh-button">
+                <img src="assets/refresh.svg" alt="refresh icon">
+            </button>
+        </div>
+    </footer>
+    <aside class="links">
+        <a href="https://www.facebook.com/tudor.iosif/" target="_blank">
+            <img id="facebook" src="assets/facebook.svg"  alt="facebook icon">
+        </a>
+        <a href="https://github.com/tudoriosif" target="_blank">
+            <img src="assets/git.svg" alt="git icon">
+        </a>
+        <a href="https://www.linkedin.com/in/tudor-andrei-iosif-7a53851b9/" target="_blank">
+            <img src="assets/linkedin.svg" id="linkedin" alt="linkedin icon">
+        </a>
+    </aside>
+    <div class="details-container">
+        <section class="node-container">
+            <h2 class="nodetext">Nodes:</h2>
+        </section>
+        <section class="con-container">
+            <h2 class="nodetext">Connections:</h2>
+        </section>
+    </div>
+    <div class="parse-container">
+        <section class="bfs-container">
+            <h2 class="bfstext">BFS:</h2>
+        </section>
+        <section class="dfs-container">
+            <h2 class="dfstext">DFS:</h2>
+        </section>
+    </div>
+    <div class="svg-container" id="svg-container">
+        <svg id="svgID"></svg>
+    </div>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
